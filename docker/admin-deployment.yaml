@@ -21,6 +21,7 @@ spec:
         - /go/src/project/start_admin.sh
         - start
         name: admin
+        image: ponzu/ponzu
         resources: {}
         volumeMounts:
         - mountPath: /go/src/project
