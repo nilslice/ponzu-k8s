@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: web
-        image: nginx
+        image: us.gcr.io/ponzu-example/web:v1
         ports:
         - containerPort: 80
         resources: {}

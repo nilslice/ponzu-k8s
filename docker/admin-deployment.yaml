@@ -16,12 +16,10 @@ spec:
         io.kompose.service: admin
     spec:
       containers:
-      - args:
-        - bash
-        - /go/src/project/start_admin.sh
-        - start
-        name: admin
-        image: ponzu/ponzu
+      - name: admin
+        image: us.gcr.io/ponzu-example/admin:v1
+        command: ["bash"]
+        args: ["/go/src/project/start_admin.sh", "start"]
         resources: {}
         volumeMounts:
         - mountPath: /go/src/project
