@@ -1,9 +1,8 @@
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  creationTimestamp: null
   labels:
-    io.kompose.service: web
+    name: web
   name: web
 spec:
   replicas: 1
@@ -19,14 +18,17 @@ spec:
       - name: web
         image: us.gcr.io/ponzu-example/web:v1
         ports:
-        - containerPort: 80
+        - containerPort: 3000
         resources: {}
         volumeMounts:
-        - mountPath: /public
-          name: web-claim0
+        # this name must match the volumes.name below
+        - name: web-disk
+          mountPath: /public
       restartPolicy: Always
       volumes:
-      - name: web-claim0
-        persistentVolumeClaim:
-          claimName: web-claim0
+      - name: web-disk
+        gcePersistentDisk:
+          # this disk must already exist
+          pdName: web-pd0
+          fsType: ext4
 status: {}
