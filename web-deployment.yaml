@@ -22,13 +22,14 @@ spec:
         resources: {}
         volumeMounts:
         # this name must match the volumes.name below
-        - name: web-disk
+        - name: web-persistent-storage
           mountPath: /public
       restartPolicy: Always
       volumes:
-      - name: web-disk
+      # this name must match the volumeMounts.name above
+      - name: web-persistent-storage
         gcePersistentDisk:
           # this disk must already exist
-          pdName: web-pd0
+          pdName: web-disk
           fsType: ext4
 status: {}

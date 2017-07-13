@@ -25,13 +25,13 @@ spec:
         resources: {}
         volumeMounts:
         # this name must match the volumes.name below
-        - name: admin-disk
+        - name: admin-persistent-storage
           mountPath: /go/src/project
       restartPolicy: Always
       volumes:
-      - name: admin-disk
+      - name: admin-persistent-storage
         gcePersistentDisk:
           # this disk must already exist
-          pdName: admin-pd0
+          pdName: admin-disk
           fsType: ext4
 status: {}
