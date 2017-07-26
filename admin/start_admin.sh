@@ -29,4 +29,5 @@ if [ "$1" = "start" ]; then
     #
 
     echo "Ponzu server started"
+    sleep infinity
 fi
