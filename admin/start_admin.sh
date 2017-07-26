@@ -9,6 +9,7 @@ touch $PONZU_SHARE/system.db
 touch $PONZU_SHARE/analytics.db
 
 echo "linking shared volume to project folder"
+rm -rf $PROJECT_FOLDER
 ln -sf $PONZU_SHARE $PROJECT_FOLDER
 
 # echo "linking the volume assets"
@@ -29,5 +30,6 @@ if [ "$1" = "start" ]; then
     #
 
     echo "Ponzu server started"
+    pwd
     sleep infinity
 fi
