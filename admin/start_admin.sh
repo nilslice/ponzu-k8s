@@ -1,6 +1,6 @@
 # create new ponzu project at $GOPATH/project - needs to match $PROJECT_FOLDER
-echo "initializing ponzu project"
-ponzu new project
+# echo "initializing ponzu project"
+# ponzu new project
 
 echo "creating the volume assets"
 mkdir -p $PONZU_SHARE/uploads
@@ -8,11 +8,14 @@ mkdir -p $PONZU_SHARE/search
 touch $PONZU_SHARE/system.db
 touch $PONZU_SHARE/analytics.db
 
-echo "linking the volume assets"
-ln -sf $PONZU_SHARE/uploads $PROJECT_FOLDER/uploads
-ln -sf $PONZU_SHARE/search $PROJECT_FOLDER/search
-ln -sf $PONZU_SHARE/system.db $PROJECT_FOLDER/system.db
-ln -sf $PONZU_SHARE/analytics.db $PROJECT_FOLDER/analytics.db
+echo "linking shared volume to project folder"
+ln -sf $PONZU_SHARE $PROJECT_FOLDER
+
+# echo "linking the volume assets"
+# ln -sf $PONZU_SHARE/uploads $PROJECT_FOLDER/uploads
+# ln -sf $PONZU_SHARE/search $PROJECT_FOLDER/search
+# ln -sf $PONZU_SHARE/system.db $PROJECT_FOLDER/system.db
+# ln -sf $PONZU_SHARE/analytics.db $PROJECT_FOLDER/analytics.db
 
 if [ "$1" = "start" ]; then
     echo "building ponzu from project directory"
