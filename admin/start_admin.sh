@@ -1,3 +1,7 @@
+# create new ponzu project at $GOPATH/project - needs to match $PROJECT_FOLDER
+echo "initializing ponzu project"
+ponzu new project
+
 echo "creating the volume assets"
 mkdir -p $PONZU_SHARE/uploads
 mkdir -p $PONZU_SHARE/search
@@ -23,4 +27,3 @@ if [ "$1" = "start" ]; then
 
     echo "Ponzu server started"
 fi
-
