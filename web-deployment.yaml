@@ -12,13 +12,14 @@ spec:
     metadata:
       creationTimestamp: null
       labels:
-        io.kompose.service: web
+        name: web
     spec:
       containers:
       - name: web
-        image: us.gcr.io/ponzu-example/web:v1
+        image: us.gcr.io/ponzu-example/web:v4
         ports:
         - containerPort: 80
+          protocol: TCP
         resources: {}
         volumeMounts:
         # this name must match the volumes.name below
