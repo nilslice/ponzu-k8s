@@ -3,3 +3,4 @@ uploads
 analytics.db
 system.db
 ponzu-server
+server.log

@@ -19,9 +19,8 @@ spec:
         command: ["bash"]
         args: ["/ponzu-share/start_admin.sh", "start"]
         ports:
-        - name: admin
-          containerPort: 8080
-          hostPort: 8080
+        - containerPort: 8080
+          protocol: TCP
         resources: {}
         volumeMounts:
         # this name must match the volumes.name below
