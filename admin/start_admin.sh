@@ -30,6 +30,6 @@ if [ "$1" = "start" ]; then
     #
 
     echo "Ponzu server started"
-    pwd
+    echo | pwd
     sleep infinity
 fi
